@@ -1,3 +1,7 @@
 # Websites Constructor
 
-JavaScript, Bootstrap
+JavaScript, Bootstrap, Parcel
+
+```bash
+npm install parcel-bundler --save-dev
+```
