@@ -1,35 +1,25 @@
-export function title(block) {
-  return `
-     <div class="row">
-            <div class="col-sm">
-                <h1>${block.value}</h1>
-            </div>
-        </div>
-  `;
+import { row, col } from "./utils";
+
+function title(block) {
+  const tag = block.options.tag ?? 'h1';
+  return row(col(`<${ tag }>${ block.value }</${ tag }>`));
 }
 
-export function text(block) {
-  return `
-         <div class="row">
-            <div class="col-sm">
-                <p>${block.value}</p>
-            </div>
-        </div>
-      `;
+function text(block) {
+  return row(col(`<p>${ block.value }</p>`));
 }
 
-export function columns(block) {
-  return `
-    <div class="row">
-      ${block.value.map((column) => `<div class="col-sm"><p>${column}</p></div>`).join(' ')}
-     </div>
-  `;
+function columns(block) {
+  return row(block.value.map(col).join(' '));
 }
 
-export function image(block) {
-  return `
-    <div class="row">
-       <img src="${block.value}" alt="Image">
-    </div>
-  `
+function image(block) {
+  return row(`<img src="${block.value}" alt="${block.alt}">`);
+}
+
+export const templates = {
+  title,
+  text,
+  columns,
+  image
 }

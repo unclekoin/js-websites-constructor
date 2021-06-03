@@ -2,6 +2,9 @@
 
 JavaScript, Bootstrap, Parcel
 
+https://v2.parceljs.org/getting-started/webapp/
+https://v2.parceljs.org/getting-started/migration/
+
 ```bash
-npm install parcel-bundler --save-dev
+$ npm install -D parcel@next
 ```
